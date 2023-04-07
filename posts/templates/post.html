@@ -1,0 +1,14 @@
+{% load markdown %}
+
+<title>{{ post.title|title }}</title>
+
+<em style="color: blue">{{ message }}</em>
+
+ <h1>{{ post.title|title }}</h1>
+<em>
+    <a href="{% url 'home' %}?author={{ post.author.id }}" target="_blank">{{ post.author }}</a>
+    {{ post.created_at }}
+</em>
+<h2>Summary</h2>
+<div>{{ post.summary }}</div>
+<div>{{ post.content|safemarkdown }}</div>

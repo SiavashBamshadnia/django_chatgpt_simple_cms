@@ -1,0 +1,6 @@
+Django
+selenium
+Markdown
+openai
+django-filter
+djangorestframework

@@ -1,0 +1,17 @@
+{% load markdown %}
+
+<title>Home</title>
+
+<h1>Home</h1>
+
+{% for post in filter.qs %}
+    <div class="post">
+        <h2><a href="{% url 'post' post.id %}" target="_blank">{{ post.title|title }}</a></h2>
+        <em>
+            <a href="{% url 'home' %}?author={{ post.author.id }}" target="_blank">{{ post.author }}</a>
+            {{ post.created_at }}
+        </em>
+        <div>{{ post.summary|safemarkdown }}</div>
+        <hr>
+    </div>
+{% endfor %}
